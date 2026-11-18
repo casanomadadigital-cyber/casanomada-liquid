@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Casanomada Digital — Marketingbureau voor websites & social media</title>
+<meta name="description" content="Casanomada Digital ontwerpt snelle, premium websites en beheert social media voor merken die willen groeien." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{--g:#25D366}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#000;color:#fff;font-family:'Barlow',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Instrument Serif',serif;font-style:italic}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 clamp(22px,4vw,48px)}
+a{color:inherit;text-decoration:none}
+.label{font-size:13px;color:rgba(255,255,255,.8)}
+
+/* liquid glass */
+.lg{background:rgba(255,255,255,.01);background-blend-mode:luminosity;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);box-shadow:inset 0 1px 1px rgba(255,255,255,.1);position:relative;overflow:hidden}
+.lg::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.4px;background:linear-gradient(180deg,rgba(255,255,255,.45) 0%,rgba(255,255,255,.15) 20%,rgba(255,255,255,0) 40%,rgba(255,255,255,0) 60%,rgba(255,255,255,.15) 80%,rgba(255,255,255,.45) 100%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.lgs{background:rgba(255,255,255,.01);background-blend-mode:luminosity;backdrop-filter:blur(50px);-webkit-backdrop-filter:blur(50px);box-shadow:4px 4px 4px rgba(0,0,0,.05),inset 0 1px 1px rgba(255,255,255,.15);position:relative;overflow:hidden}
+.lgs::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.4px;background:linear-gradient(180deg,rgba(255,255,255,.5) 0%,rgba(255,255,255,.2) 20%,rgba(255,255,255,0) 40%,rgba(255,255,255,0) 60%,rgba(255,255,255,.2) 80%,rgba(255,255,255,.5) 100%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.in{position:relative;z-index:1}
+
+/* nav */
+nav{position:fixed;top:16px;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,64px)}
+nav .logo{width:48px;height:48px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:24px}
+nav .menu{display:flex;align-items:center;gap:4px;border-radius:999px;padding:6px 6px 6px 18px}
+nav .menu a{font-size:13px;color:rgba(255,255,255,.9);padding:8px 12px;border-radius:999px;transition:color .2s}
+nav .menu a:hover{color:#fff}
+nav .cta{background:#fff;color:#000!important;padding:9px 18px;border-radius:999px;font-weight:500;display:inline-flex;align-items:center;gap:6px;transition:transform .25s}
+nav .cta:hover{transform:translateY(-2px)}
+nav .spacer{width:48px;height:48px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:9px;border-radius:999px;font-size:13px;font-weight:400;cursor:pointer;transition:transform .3s,box-shadow .3s;border:1px solid transparent}
+.btn-w{background:#fff;color:#000;padding:13px 24px;font-weight:500}
+.btn-w:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(255,255,255,.14)}
+.btn-glass{padding:12px 22px}
+.btn-wa{background:var(--g);color:#053d1c;padding:12px 22px;font-weight:500}
+.btn-wa:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(37,211,102,.35)}
+svg{display:inline-block;vertical-align:middle}
+
+/* hero */
+.hero{position:relative;min-height:100vh;overflow:hidden;background:#000}
+.hero video,.cap video{position:absolute;z-index:0}
+.hero .bgvid{left:50%;top:0;transform:translateX(-50%);width:120%;height:120%;object-fit:cover;object-position:top;opacity:0}
+.hero .content{position:relative;z-index:10;display:flex;flex-direction:column;min-height:100vh}
+.hero .center{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:96px 16px 0}
+.badge{border-radius:999px;padding:6px 6px;display:inline-flex;align-items:center;gap:8px}
+.badge .new{background:#fff;color:#000;font-size:11px;font-weight:500;border-radius:999px;padding:2px 10px}
+.badge .t{font-size:13px;color:rgba(255,255,255,.9);padding-right:12px}
+h1.hl{font-size:clamp(46px,8.4vw,112px);line-height:.82;letter-spacing:-4px;margin-top:26px;max-width:14ch}
+.sub{margin-top:24px;font-size:clamp(14px,1.6vw,17px);max-width:56ch;color:#fff;font-weight:300;line-height:1.35}
+.herocta{margin-top:26px;display:flex;gap:22px;align-items:center;flex-wrap:wrap;justify-content:center}
+.herocta .plain{display:inline-flex;align-items:center;gap:8px;font-size:13px}
+.stats{margin-top:34px;display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.stat{width:230px;border-radius:20px;padding:22px;text-align:left}
+.stat .n{font-size:40px;line-height:1;margin-top:14px;letter-spacing:-1px}
+.stat .l{font-size:13px;color:rgba(255,255,255,.8);margin-top:6px}
+.trust{display:flex;flex-direction:column;align-items:center;gap:18px;padding:0 0 34px}
+.trust .pill{border-radius:999px;padding:9px 20px}
+.trust .pill .in{font-size:13px;color:rgba(255,255,255,.8)}
+.logos{display:flex;flex-wrap:wrap;justify-content:center;gap:44px}
+.logos span{font-size:clamp(22px,3vw,30px);color:rgba(255,255,255,.9)}
+.scrolldown{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);z-index:10;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.6);animation:bob 2.2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translate(-50%,0);opacity:.6}50%{transform:translate(-50%,7px);opacity:1}}
+
+/* sections */
+section.block{position:relative;background:#000;padding:clamp(80px,12vh,140px) 0}
+.ey{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:20px}
+h2{font-size:clamp(34px,5.5vw,64px);line-height:.95;letter-spacing:-2px}
+.lead{margin-top:20px;color:rgba(255,255,255,.7);font-weight:300;max-width:60ch}
+
+/* capabilities */
+.cap{position:relative;min-height:100vh;overflow:hidden;background:#000}
+.cap .bgvid{inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
+.cap .content{position:relative;z-index:10;min-height:100vh;display:flex;flex-direction:column;padding:96px clamp(22px,6vw,80px) 48px}
+.cap h2{font-size:clamp(40px,7vw,96px);line-height:.9;letter-spacing:-3px;white-space:pre-line}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px}
+.capcard{border-radius:20px;padding:26px;min-height:360px;display:flex;flex-direction:column}
+.capcard .top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.capcard .ico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+.tag{border-radius:999px;padding:4px 12px;font-size:11px;color:rgba(255,255,255,.9);white-space:nowrap}
+.capcard h3{font-size:clamp(28px,3.6vw,36px);letter-spacing:-1px;line-height:1}
+.capcard p{margin-top:12px;font-size:14px;color:rgba(255,255,255,.9);font-weight:300;line-height:1.4;max-width:32ch}
+.spacer{flex:1}
+
+/* werk */
+.grid3b{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.fcard{border-radius:20px;padding:12px;display:block;transition:transform .4s,box-shadow .4s}
+.fcard:hover{transform:translateY(-8px);box-shadow:0 36px 80px rgba(255,255,255,.08)}
+.mock{border-radius:12px;overflow:hidden;aspect-ratio:16/10;display:flex;flex-direction:column;background:#f9f8f6}
+.mock .bar{display:flex;gap:6px;padding:9px 13px;background:#fff;border-bottom:1px solid rgba(13,13,13,.06)}
+.mock .bar i{width:9px;height:9px;border-radius:999px;background:#d8d4cc}
+.mock .h{flex:1;display:flex;flex-direction:column;justify-content:center;gap:7px;padding:0 18px;position:relative}
+.mock.dark .h{background:linear-gradient(150deg,#1d1913,#0d0d0d)}
+.mock.light .h{background:linear-gradient(150deg,#efece6,#dcd7cc)}
+.mock .h .h1{width:60%;height:12px;border-radius:4px}
+.mock .h .h2{width:42%;height:7px;border-radius:4px}
+.mock .h .bt{width:72px;height:16px;border-radius:999px;margin-top:4px}
+.mock.dark .h1{background:#f1ede4}.mock.dark .h2{background:rgba(241,237,228,.55)}.mock.dark .bt{background:#cbc7bd}
+.mock.light .h1{background:#0d0d0d}.mock.light .h2{background:#807b6e}.mock.light .bt{background:#0d0d0d}
+.mock .rows{display:flex;gap:7px;padding:10px 13px;background:#fff}
+.mock .rows span{flex:1;height:22px;border-radius:6px;background:#f3f1ed;border:1px solid rgba(13,13,13,.06)}
+.fmeta{display:flex;justify-content:space-between;align-items:center;padding:14px 8px 6px}
+.fmeta b{font-size:15px;font-weight:500}.fmeta .c{font-size:12px;color:rgba(255,255,255,.55)}
+.fmeta .no{font-size:12px;color:rgba(255,255,255,.5)}
+.case{margin-top:90px;border-radius:24px;padding:clamp(28px,5vw,52px)}
+.case .cg{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.case h3{font-size:clamp(32px,4.4vw,52px);letter-spacing:-2px;line-height:.95}
+.csrow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px;max-width:440px}
+.cs{border-radius:12px;padding:18px 10px;text-align:center}
+.cs .n{font-size:26px}.cs .l{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:5px}
+
+/* pricing */
+.grid3c{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px;max-width:1000px;margin-left:auto;margin-right:auto}
+.pcard{border-radius:20px;padding:30px;min-height:380px;display:flex;flex-direction:column}
+.pcard .ph3{font-size:28px;letter-spacing:-1px}
+.pcard .pr{font-size:20px;color:rgba(255,255,255,.6);margin-top:4px}
+.pcard ul{list-style:none;margin:20px 0;flex:1;display:flex;flex-direction:column;gap:12px}
+.pcard li{display:flex;gap:11px;font-size:14px;color:rgba(255,255,255,.8);font-weight:300}
+.pcard li::before{content:"";width:5px;height:5px;border-radius:999px;background:rgba(255,255,255,.6);margin-top:8px;flex:0 0 auto}
+.pcard .best{align-self:flex-start;background:#fff;color:#000;font-size:10px;letter-spacing:.14em;text-transform:uppercase;border-radius:999px;padding:4px 12px;margin-bottom:14px}
+
+/* reviews */
+.center-h{text-align:center}
+.center-h .lead{margin-left:auto;margin-right:auto}
+.rating{display:inline-flex;align-items:center;gap:12px;margin-top:22px;border-radius:999px;padding:11px 22px}
+.rating .score{font-size:30px}.rating .stars{color:rgba(255,255,255,.75);letter-spacing:2px}.rating small{font-size:12px;color:rgba(255,255,255,.6)}
+.grid3d{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.rc{border-radius:20px;padding:30px;display:flex;flex-direction:column}
+.rc .stars{color:rgba(255,255,255,.7);letter-spacing:2px;font-size:15px}
+.rc p{margin:16px 0 20px;font-size:19px;line-height:1.25;color:rgba(255,255,255,.95);flex:1}
+.rc .who{display:flex;align-items:center;gap:12px;border-top:1px solid rgba(255,255,255,.1);padding-top:16px}
+.rc .av{width:40px;height:40px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:14px}
+.rc .who b{font-size:14px;font-weight:500;display:block}.rc .who span{font-size:12px;color:rgba(255,255,255,.55)}
+
+/* contact */
+.cgrid{display:grid;grid-template-columns:1fr 1.1fr;gap:52px;align-items:start;max-width:1000px;margin:0 auto}
+.cinfo a{display:block;margin-bottom:6px}
+form.cf{border-radius:20px;padding:30px}
+form.cf label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:8px}
+form.cf input,form.cf textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:13px 15px;color:#fff;font-family:inherit;font-size:15px;font-weight:300;margin-bottom:16px;transition:border-color .25s}
+form.cf input:focus,form.cf textarea:focus{outline:none;border-color:rgba(255,255,255,.4)}
+form.cf textarea{min-height:104px;resize:vertical}
+form.cf .note{font-size:12px;color:rgba(255,255,255,.45);text-align:center;margin-top:14px}
+.hp{position:absolute;left:-9999px}
+.ok{border-radius:20px;padding:40px;text-align:center}
+.ok h3{font-size:34px}.ok p{margin-top:10px;color:rgba(255,255,255,.75);font-weight:300}
+
+/* footer */
+footer{background:#000;border-top:1px solid rgba(255,255,255,.1);padding:64px 0 40px}
+.frow{display:flex;flex-wrap:wrap;justify-content:space-between;gap:40px}
+.frow .ft{max-width:30ch;color:rgba(255,255,255,.55);font-weight:300;margin-top:12px;font-size:14px}
+.fcols{display:flex;gap:56px;flex-wrap:wrap}
+.fcol h5{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px}
+.fcol a{display:block;color:rgba(255,255,255,.6);font-size:14px;margin-bottom:9px}
+.fcol a:hover{color:#fff}
+.fbot{margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:rgba(255,255,255,.4)}
+
+/* wa fab */
+.wa{position:fixed;right:20px;bottom:20px;z-index:60;width:56px;height:56px;border-radius:999px;background:var(--g);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(37,211,102,.4)}
+.wa svg{width:28px;height:28px;fill:#fff}
+
+/* animations */
+.rv{opacity:0;transform:translateY(28px);filter:blur(10px);transition:opacity .9s cubic-bezier(.19,1,.22,1),transform .9s cubic-bezier(.19,1,.22,1),filter .9s cubic-bezier(.19,1,.22,1)}
+.rv.show{opacity:1;transform:none;filter:none}
+.bw{display:inline-block;margin-right:.28em;opacity:0;filter:blur(10px);transform:translateY(50px);transition:opacity .7s ease,filter .7s ease,transform .7s ease}
+.bw.show{opacity:1;filter:none;transform:none}
+h1.hl{display:flex;flex-wrap:wrap;justify-content:center;row-gap:.06em}
+
+@media(max-width:900px){
+  nav .menu{display:none}
+  .stats{flex-direction:column;align-items:center}
+  .grid3,.grid3b,.grid3c,.grid3d{grid-template-columns:1fr}
+  .case .cg,.cgrid{grid-template-columns:1fr;gap:34px}
+}
+@media(prefers-reduced-motion:reduce){.rv,.bw{opacity:1;filter:none;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo lg"><span class="in serif">C</span></div>
+  <div class="menu lg">
+    <a href="#werk">Werk</a><a href="#diensten">Diensten</a><a href="#pakketten">Pakketten</a><a href="#reviews">Reviews</a>
+    <a href="#contact" class="cta">Plan een gesprek <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
+  </div>
+  <div class="spacer"></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <video class="bgvid" data-fade autoplay muted playsinline preload="auto" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260619_191346_9d19d66e-86a4-47f7-8dc6-712c1788c3b2.mp4"></video>
+  <div class="content">
+    <div class="center">
+      <div class="badge lg rv"><span class="new in">Nieuw</span><span class="t in">Nieuwe projecten Q1 2027 — beperkte capaciteit</span></div>
+      <h1 class="hl serif" data-blur>Digitale merken gebouwd om te blijven staan</h1>
+      <p class="sub rv">Wij zijn een klein team van ontwerpers en bouwers dat merk-bepalende websites maakt voor ambitieuze bedrijven. Strakke typografie, filmische motion, en social media die blijft hangen.</p>
+      <div class="herocta rv">
+        <a href="#contact" class="btn lgs btn-glass"><span class="in">Plan een gesprek <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span></a>
+        <a href="#werk" class="plain"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg> Bekijk ons werk</a>
+      </div>
+      <div class="stats rv">
+        <div class="stat lg"><div class="in"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div class="n serif">2–4 wkn</div><div class="l">Gemiddelde doorlooptijd tot live</div></div></div>
+        <div class="stat lg"><div class="in"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.5 1.3 6.6L12 17.9 6.1 21l1.3-6.6L2.5 9.9l6.6-.8L12 2.5z"/></svg><div class="n serif">4,9★</div><div class="l">Gemiddeld · 40+ samenwerkingen</div></div></div>
+      </div>
+    </div>
+    <div class="trust rv">
+      <div class="pill lg"><span class="in">Vertrouwd door ondernemers in bouw, zorg en retail</span></div>
+      <div class="logos">
+        <span class="serif">D&amp;J</span><span class="serif">Da Vinci</span><span class="serif">By Aicha</span><span class="serif">SA Elektra</span><span class="serif">Oude Gein</span>
+      </div>
+    </div>
+  </div>
+  <div class="scrolldown">Scroll ↓</div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="cap" id="diensten">
+  <video class="bgvid" data-fade autoplay muted playsinline preload="auto" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_093722_ccfc7ebf-182f-419f-8a62-2dc02db7dd9d.mp4"></video>
+  <div class="content">
+    <div class="rv">
+      <div class="ey">// Wat wij doen</div>
+      <h2 class="serif">Eén team,
+van fundament tot live</h2>
+    </div>
+    <div class="grid3">
+      <div class="capcard lg rv"><div class="in" style="display:flex;flex-direction:column;height:100%">
+        <div class="top"><div class="ico lg"><span class="in"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12.5" rx="2"/><path d="M8.5 20h7M12 16.5V20M3 8h18"/></svg></span></div><div class="tags"><span class="tag lg"><span class="in">Merkidentiteit</span></span><span class="tag lg"><span class="in">Art direction</span></span><span class="tag lg"><span class="in">UI design</span></span><span class="tag lg"><span class="in">Motion</span></span></div></div>
+        <div class="spacer"></div>
+        <div><h3 class="serif">Design</h3><p>We vormen identiteiten en interfaces die onmiskenbaar van jou zijn — typografische systemen, componenten en art-directed pagina's die meegroeien zonder karakter te verliezen.</p></div>
+      </div></div>
+      <div class="capcard lg rv"><div class="in" style="display:flex;flex-direction:column;height:100%">
+        <div class="top"><div class="ico lg"><span class="in"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2.5"/><circle cx="12" cy="13.5" r="3.2"/><path d="M8.5 7l1.3-2.3h4.4L15.5 7"/></svg></span></div><div class="tags"><span class="tag lg"><span class="in">Snel</span></span><span class="tag lg"><span class="in">Mobiel-first</span></span><span class="tag lg"><span class="in">SEO-klaar</span></span><span class="tag lg"><span class="in">Onderhoudbaar</span></span></div></div>
+        <div class="spacer"></div>
+        <div><h3 class="serif">Development</h3><p>Razendsnelle, toegankelijke websites die converteren. Gebouwd om te blijven staan en makkelijk uit te breiden als je merk verder groeit.</p></div>
+      </div></div>
+      <div class="capcard lg rv"><div class="in" style="display:flex;flex-direction:column;height:100%">
+        <div class="top"><div class="ico lg"><span class="in"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg></span></div><div class="tags"><span class="tag lg"><span class="in">Social media</span></span><span class="tag lg"><span class="in">Ads</span></span><span class="tag lg"><span class="in">UGC</span></span><span class="tag lg"><span class="in">Content</span></span></div></div>
+        <div class="spacer"></div>
+        <div><h3 class="serif">Groei</h3><p>Live gaan is de startlijn. We nemen je social media over en zetten campagnes op die van een mooie site een groeiende aanvragenmachine maken.</p></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WERK -->
+<section class="block" id="werk"><div class="wrap">
+  <div class="rv"><div class="ey">// Geselecteerd werk</div><h2 class="serif">Deze site is ons portfolio</h2><p class="lead">Een greep uit de websites die we voor klanten bouwden. Klik door naar de echte sites.</p></div>
+  <div class="grid3b">
+    <a class="fcard lg rv" href="https://djbouwrenovatie.com/" target="_blank" rel="noopener"><div class="in"><div class="mock dark"><div class="bar"><i></i><i></i><i></i></div><div class="h"><div class="h1"></div><div class="h2"></div><div class="bt"></div></div><div class="rows"><span></span><span></span><span></span></div></div><div class="fmeta"><div><b>D&amp;J Bouw &amp; Renovatie</b><div class="c">Bouw &amp; renovatie</div></div><span class="no">01</span></div></div></a>
+    <a class="fcard lg rv" href="https://www.davinciclinic.be/" target="_blank" rel="noopener"><div class="in"><div class="mock light"><div class="bar"><i></i><i></i><i></i></div><div class="h"><div class="h1"></div><div class="h2"></div><div class="bt"></div></div><div class="rows"><span></span><span></span><span></span></div></div><div class="fmeta"><div><b>Da Vinci Clinic</b><div class="c">Esthetische kliniek</div></div><span class="no">02</span></div></div></a>
+    <a class="fcard lg rv" href="https://oudegeinexclusive.nl/" target="_blank" rel="noopener"><div class="in"><div class="mock dark"><div class="bar"><i></i><i></i><i></i></div><div class="h"><div class="h1"></div><div class="h2"></div><div class="bt"></div></div><div class="rows"><span></span><span></span><span></span></div></div><div class="fmeta"><div><b>Oude Gein Exclusive</b><div class="c">Exclusieve auto's</div></div><span class="no">03</span></div></div></a>
+  </div>
+
+  <div class="case lg rv"><div class="in"><div class="cg">
+    <div>
+      <div class="ey">// Klant uitgelicht</div>
+      <h3 class="serif">Hoe wij D&amp;J Bouw lieten groeien</h3>
+      <p class="lead">Van losse posts naar een herkenbaar, premium merk. Wij namen hun social media volledig over en bouwden een online uitstraling die structureel nieuwe aanvragen oplevert.</p>
+      <div class="csrow">
+        <div class="cs lg"><div class="in"><div class="n serif">15,7K</div><div class="l">Volgers</div></div></div>
+        <div class="cs lg"><div class="in"><div class="n serif">54</div><div class="l">Posts</div></div></div>
+        <div class="cs lg"><div class="in"><div class="n serif">A–Z</div><div class="l">Beheer</div></div></div>
+      </div>
+      <a href="https://www.instagram.com/d.jbouwrenovatie/" target="_blank" rel="noopener" class="btn btn-w" style="margin-top:26px">Bekijk @d.jbouwrenovatie <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
+    </div>
+    <div class="lg" style="border-radius:20px;padding:16px"><div class="in"><div class="mock dark"><div class="bar"><i></i><i></i><i></i></div><div class="h"><div class="h1"></div><div class="h2"></div><div class="bt"></div></div><div class="rows"><span></span><span></span><span></span></div></div><div style="text-align:center;font-size:12px;color:rgba(255,255,255,.5);margin-top:12px">@d.jbouwrenovatie · Instagram</div></div></div>
+  </div></div></div>
+</div></section>
+
+<!-- PAKKETTEN -->
+<section class="block center-h" id="pakketten"><div class="wrap">
+  <div class="rv"><div class="ey">// Pakketten</div><h2 class="serif">Helder, zonder verrassingen</h2><p class="lead">Van een strakke website tot volledige marketing. We stemmen het af op jouw doel.</p></div>
+  <div class="grid3c">
+    <div class="pcard lg rv"><div class="in" style="display:flex;flex-direction:column;height:100%"><div class="ph3 serif">Website</div><div class="pr serif">Prijs op aanvraag</div><ul><li>Website op maat</li><li>Mobiel-first &amp; snel</li><li>SEO-basis ingericht</li><li>Live in 2–4 weken</li></ul><a href="#contact" class="btn btn-w" style="justify-content:center">Plan een gesprek</a></div></div>
+    <div class="pcard lgs rv"><div class="in" style="display:flex;flex-direction:column;height:100%"><span class="best">Meest gekozen</span><div class="ph3 serif">Website + Social</div><div class="pr serif">Prijs op aanvraag</div><ul><li>Alles uit Website</li><li>Social media beheer</li><li>Content &amp; planning</li><li>Maandelijkse rapportage</li></ul><a href="#contact" class="btn btn-w" style="justify-content:center">Plan een gesprek</a></div></div>
+    <div class="pcard lg rv"><div class="in" style="display:flex;flex-direction:column;height:100%"><div class="ph3 serif">Volledig</div><div class="pr serif">Prijs op aanvraag</div><ul><li>Alles uit Website + Social</li><li>Google &amp; Meta campagnes</li><li>UGC &amp; influencers</li><li>Vast team voor jouw merk</li></ul><a href="#contact" class="btn btn-w" style="justify-content:center">Plan een gesprek</a></div></div>
+  </div>
+</div></section>
+
+<!-- REVIEWS -->
+<section class="block center-h" id="reviews"><div class="wrap">
+  <div class="rv"><div class="ey">// Wat klanten zeggen</div><h2 class="serif">Echte verhalen van echte merken</h2>
+    <div class="rating lg"><span class="in score serif">4,9</span><span class="in stars">★★★★★</span><small class="in">Gemiddeld · 40+ samenwerkingen</small></div>
+  </div>
+  <div class="grid3d" style="text-align:left">
+    <div class="rc lg rv"><div class="in" style="display:flex;flex-direction:column;height:100%"><div class="stars">★★★★★</div><p class="serif">“Sinds Casanomada onze social media beheert komen er structureel meer aanvragen binnen.”</p><div class="who"><span class="av lg"><span class="in serif">D&amp;J</span></span><div><b>D&amp;J Bouw &amp; Renovatie</b><span>Bouwbedrijf</span></div></div></div></div>
+    <div class="rc lg rv"><div class="in" style="display:flex;flex-direction:column;height:100%"><div class="stars">★★★★★</div><p class="serif">“Professioneel, betrouwbaar en met oog voor detail. Precies wat een kliniek nodig heeft.”</p><div class="who"><span class="av lg"><span class="in serif">DV</span></span><div><b>Da Vinci Clinic</b><span>Esthetische kliniek</span></div></div></div></div>
+    <div class="rc lg rv"><div class="in" style="display:flex;flex-direction:column;height:100%"><div class="stars">★★★★★</div><p class="serif">“Onze Instagram is compleet getransformeerd. Meer bereik, meer verkoop.”</p><div class="who"><span class="av lg"><span class="in serif">BA</span></span><div><b>By Aicha</b><span>Modest fashion</span></div></div></div></div>
+  </div>
+</div></section>
+
+<!-- CONTACT -->
+<section class="block" id="contact"><div class="wrap">
+  <div class="cgrid">
+    <div class="cinfo rv">
+      <div class="ey">// Klaar om te groeien?</div>
+      <h2 class="serif">Plan een gratis gesprek</h2>
+      <p class="lead" style="max-width:36ch">Vertel kort wat je zoekt. We kijken samen naar je merk en laten je zien wat er mogelijk is.</p>
+      <div style="margin-top:26px">
+        <a href="mailto:casanomada.digital@gmail.com">casanomada.digital@gmail.com</a>
+        <a href="tel:+31644818674">06 44818674</a>
+      </div>
+      <a href="https://wa.me/31644818674" target="_blank" rel="noopener" class="btn btn-wa" style="margin-top:22px"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2m5.52 11.99c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28"/></svg> WhatsApp ons</a>
+    </div>
+    <div class="rv">
+      <form class="cf lg" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="cform">
+        <div class="in">
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hp"><label>Laat leeg: <input name="bot-field" /></label></p>
+          <label>Naam</label><input type="text" name="naam" placeholder="Je naam" />
+          <label>E-mail</label><input type="email" name="email" placeholder="je@email.nl" />
+          <label>Bedrijf</label><input type="text" name="bedrijf" placeholder="Je bedrijf" />
+          <label>Wat wil je?</label><textarea name="bericht" placeholder="Bijv. een nieuwe website, of hulp met social media"></textarea>
+          <button type="submit" class="btn btn-w" style="width:100%;justify-content:center">Verstuur aanvraag <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></button>
+          <p class="note">Vrijblijvend · Geen verplichtingen · Reactie binnen 24 uur</p>
+        </div>
+      </form>
+      <div class="ok lg" id="cok" style="display:none"><div class="in"><h3 class="serif">Bedankt!</h3><p>Je aanvraag is verstuurd. We reageren binnen 24 uur.</p></div></div>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="frow">
+    <div><div class="serif" style="font-size:32px">Casanomada.</div><p class="ft">Marketingbureau voor websites en social media, voor merken die marktleider willen worden.</p></div>
+    <div class="fcols">
+      <div class="fcol"><h5>Menu</h5><a href="#diensten">Diensten</a><a href="#werk">Werk</a><a href="#pakketten">Pakketten</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div>
+      <div class="fcol"><h5>Contact</h5><a href="mailto:casanomada.digital@gmail.com">casanomada.digital@gmail.com</a><a href="tel:+31644818674">06 44818674</a></div>
+      <div class="fcol"><h5>Volg ons</h5><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a></div>
+    </div>
+  </div>
+  <div class="fbot"><span>© 2026 Casanomada Digital · KvK [nummer] · [plaats]</span><span>Nederland</span></div>
+</div></footer>
+
+<a class="wa" href="https://wa.me/31644818674" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2m5.52 11.99c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28"/></svg></a>
+
+<script>
+/* fading background videos */
+document.querySelectorAll('video[data-fade]').forEach(function(v){
+  var raf;
+  function fade(from,to,dur){cancelAnimationFrame(raf);var t0=performance.now();
+    (function step(t){var k=Math.min(1,(t-t0)/dur);v.style.opacity=from+(to-from)*k;if(k<1)raf=requestAnimationFrame(step);})(performance.now());}
+  v.addEventListener('loadeddata',function(){fade(0,1,600);});
+  v.addEventListener('timeupdate',function(){if(v.duration&&v.duration-v.currentTime<=0.55)fade(1,0,550);});
+  v.addEventListener('ended',function(){v.currentTime=0;v.play().catch(function(){});fade(0,1,500);});
+  v.play().catch(function(){});
+});
+
+/* blur-in headline (word by word) */
+document.querySelectorAll('[data-blur]').forEach(function(el){
+  var words=el.textContent.trim().split(/\s+/);el.textContent='';
+  words.forEach(function(w){var s=document.createElement('span');s.className='bw';s.textContent=w;el.appendChild(s);});
+  var ws=el.querySelectorAll('.bw');
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){ws.forEach(function(s,i){setTimeout(function(){s.classList.add('show');},i*90);});io.disconnect();}});},{threshold:0.1});
+  io.observe(el);
+});
+
+/* reveal on scroll */
+var rio=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('show');rio.unobserve(x.target);}});},{threshold:0.12});
+document.querySelectorAll('.rv').forEach(function(el){rio.observe(el);});
+
+/* contact form via Netlify Forms */
+var cf=document.getElementById('cform');
+if(cf){cf.addEventListener('submit',function(e){e.preventDefault();
+  var data=new FormData(cf);var body=new URLSearchParams();body.append('form-name','contact');
+  data.forEach(function(v,k){body.append(k,v);});
+  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body.toString()})
+    .then(function(){cf.style.display='none';document.getElementById('cok').style.display='block';})
+    .catch(function(){window.location.href='mailto:casanomada.digital@gmail.com';});
+});}
+</script>
+</body>
+</html>
